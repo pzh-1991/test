@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean class="com.offcn.crm.bean.Person"> <property name="pid" value="01"></property> 
+		<property name="name" value="zhangsan"></property> <property name="gender" 
+		value="true"></property> <property name="salary" value="100"></property> 
+		</bean> -->
+
+	<!-- <bean class="com.offcn.crm.bean.Person"> <constructor-arg value="01"></constructor-arg> 
+		<constructor-arg value="zhangsan"></constructor-arg> <constructor-arg value="true"></constructor-arg> 
+		<constructor-arg value="100"></constructor-arg> </bean> -->
+
+	<!-- <bean class="com.offcn.crm.bean.Person" p:pid="02" p:name="lisi" p:gender="false" 
+		p:salary="200"> </bean> -->
+	<!-- <bean id="car" class="com.offcn.crm.bean.Car"> <property name="cid" 
+		value="#{22}"></property> <property name="color" value="#{'black'}"></property> 
+		</bean> <bean class="com.offcn.crm.bean.Person"> <property name="pid" value="#{car.cid}"></property> 
+		<property name="name" value="#{'wanger'}"></property> <property name="gender" 
+		value="#{true}"></property> <property name="salary" value="#{300}"></property> 
+		<property name="car" value="#{car}"></property> </bean> -->
+<!-- 	<bean id="car" class="com.offcn.crm.bean.Car">
+		<property name="cid" value="99"></property>
+		<property name="color" value="red"></property>
+	</bean>
+	<bean class="com.offcn.crm.bean.FlexBean">
+		<property name="arr">
+			<array>
+				<value>10</value>
+				<value>20</value>
+				<ref bean="car" />
+
+			</array>
+
+		</property>
+		<property name="list">
+			<list>
+				<value>01</value>
+				<value>02</value>
+			</list>
+		</property>
+		
+	</bean>
+ -->
+<bean id="car" class="com.offcn.crm.bean.Car" abstract="true">
+<property name="color" value="red"/>
+</bean>
+<bean id="c1" parent="car">
+<property name="cid" value="1"></property>
+</bean>
+<bean id="c2" parent="car">
+<property name="cid" value="2"></property>
+</bean>
+</beans>
